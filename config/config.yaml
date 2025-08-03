@@ -1,0 +1,21 @@
+report_root: "./reports"
+
+# Database configurations with conn_str format for db_helper compatibility
+databases:
+  orders:
+    conn_str: "Driver={SQL Server};Server=ross-db-srv-test.database.windows.net;Database=ORDERS;UID=admin_ross;PWD=Active@IT2023;Encrypt=yes;TrustServerCertificate=yes"
+  shipments:
+    conn_str: "Driver={SQL Server};Server=ross-db-srv-test.database.windows.net;Database=ORDERS;UID=admin_ross;PWD=Active@IT2023;Encrypt=yes;TrustServerCertificate=yes"
+
+# LM Studio configuration
+llm:
+  url: "http://localhost:1234/v1/chat/completions"
+  model: "qwen2.5-7b-instruct-1m"
+
+# LLM Analysis configuration (can use same endpoint or different one)
+llm_analysis:
+  url: "http://localhost:1234/v1/chat/completions"
+  model: "deepseek/deepseek-r1-0528-qwen3-8b"
+  temperature: 0.7
+  max_tokens: 50000
+

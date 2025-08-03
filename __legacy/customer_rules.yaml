@@ -1,0 +1,32 @@
+customers:
+- canonical: GREYSON
+  status: approved
+  packed_products: GREYSON
+  shipped: GREYSON
+  master_order_list: GREYSON CLOTHIERS
+  aliases:
+    - GREYSON
+    - GREYSON CLOTHIERS
+  order_key_config:
+    unique_keys:
+      - AAG ORDER NUMBER
+      - PLANNED DELIVERY METHOD
+      - CUSTOMER STYLE
+    extra_checks:
+      - PO NUMBER
+      - ORDER TYPE
+
+- canonical: JOHNNIE O
+  status: approved
+  packed_products: JOHNNIE O
+  shipped: JOHNNIE O
+  master_order_list: JOHNNIE O
+  aliases:
+    - JOHNNIE O
+  order_key_config:
+    unique_keys:
+      - AAG ORDER NUMBER
+      - PLANNED DELIVERY METHOD
+      - CUSTOMER STYLE
+    extra_checks: []
+

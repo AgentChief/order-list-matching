@@ -1,0 +1,1025 @@
+# Global configuration that applies to all customers as fallback
+global_config:
+  # Default column mappings: Order Column -> Shipment Column
+  map:
+    PO NUMBER: Customer_PO
+    PLANNED DELIVERY METHOD: Shipping_Method
+    CUSTOMER STYLE: Style
+    CUSTOMER COLOUR DESCRIPTION: Color
+    SIZE: Size
+  
+  # Default order key configuration
+  order_key_config:
+    unique_keys:
+      - AAG ORDER NUMBER
+      - PLANNED DELIVERY METHOD
+      - CUSTOMER STYLE
+    extra_checks:
+      - PO NUMBER
+      - ORDER TYPE
+      - CUSTOMER ALT PO
+  
+  # Default shipment key configuration  
+  shipment_key_config:
+    unique_keys:
+      - Customer_PO
+      - Shipping_Method
+      - Style
+      - Color
+      - Size
+    extra_checks:
+      - shippingCountry
+
+customers:
+- canonical: ACTIVELY BLACK
+  status: review
+  packed_products: ''
+  shipped: ACTIVELY BLACK
+  master_order_list: ACTIVELY BLACK
+  mon_customer_ms: ''
+  aliases:
+  - ACTIVELY BLACK
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: AESCAPE
+  status: approved
+  packed_products: AESCAPE
+  shipped: AESCAPE
+  master_order_list: AESCAPE
+  mon_customer_ms: ''
+  aliases:
+  - AESCAPE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: AIME LEON DORE
+  status: review
+  packed_products: ''
+  shipped: AIME LEON DORE
+  master_order_list: AIME LEON DORE
+  mon_customer_ms: ''
+  aliases:
+  - AIME LEON DORE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: AJE
+  status: approved
+  packed_products: ''
+  shipped: AJE
+  master_order_list: AJE ATHLETICA (AU)
+  mon_customer_ms: ''
+  aliases:
+  - AJE
+  - AJE ATHLETICA (AU)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: ALWRLD
+  status: review
+  packed_products: ALWRLD
+  shipped: ALWRLD
+  master_order_list: ALWRLD (US)
+  mon_customer_ms: ''
+  aliases:
+  - ALWRLD
+  - ALWRLD (US)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: ASHER GOLF
+  status: review
+  packed_products: ''
+  shipped: ''
+  master_order_list: ASHER GOLF
+  mon_customer_ms: ''
+  aliases:
+  - ASHER GOLF
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: ASRV
+  status: review
+  packed_products: ASRV
+  shipped: ASRV
+  master_order_list: AESTHETIC REVOLUTION LLC (US)
+  mon_customer_ms: ''
+  aliases:
+  - ASRV
+  - AESTHETIC REVOLUTION LLC (US)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: B'HOOD
+  status: review
+  packed_products: ''
+  shipped: ''
+  master_order_list: B'HOOD
+  mon_customer_ms: ''
+  aliases:
+  - B'HOOD
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: BAD BIRDIE
+  status: review
+  packed_products: ''
+  shipped: BAD BIRDIE
+  master_order_list: BAD BIRDIE
+  mon_customer_ms: ''
+  aliases:
+  - BAD BIRDIE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: BANDIER
+  status: review
+  packed_products: ''
+  shipped: BANDIER
+  master_order_list: BANDIER
+  mon_customer_ms: ''
+  aliases:
+  - BANDIER
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: BANDIT RUNNING
+  status: approved
+  packed_products: BANDIT RUNNING
+  shipped: BANDIT RUNNING
+  master_order_list: BANDIT RUNNING
+  mon_customer_ms: ''
+  aliases:
+  - BANDIT RUNNING
+  - BANDIT
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: BC BRANDS
+  status: review
+  packed_products: ''
+  shipped: ''
+  master_order_list: BC BRANDS
+  mon_customer_ms: ''
+  aliases:
+  - BC BRANDS
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: BEAU HUDSON
+  status: review
+  packed_products: ''
+  shipped: BEAU HUDSON
+  master_order_list: ''
+  mon_customer_ms: ''
+  aliases:
+  - BEAU HUDSON
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: BOGGI
+  status: approved
+  packed_products: BOGGI
+  shipped: BOGGI
+  master_order_list: BOGGI MILANO
+  mon_customer_ms: ''
+  aliases:
+  - BOGGI
+  - BOGGI MILANO
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: BORN PRIMITIVE
+  status: review
+  packed_products: ''
+  shipped: BORN PRIMITIVE
+  master_order_list: BORN PRIMITIVE
+  mon_customer_ms: ''
+  aliases:
+  - BORN PRIMITIVE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: CAMILLA
+  status: approved
+  packed_products: CAMILLA
+  shipped: CAMILLA
+  master_order_list: CAMILLA (AU)
+  mon_customer_ms: ''
+  aliases:
+  - CAMILLA
+  - CAMILLA (AU)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: CUTS CLOTHING
+  status: approved
+  packed_products: ''
+  shipped: CUTS CLOTHING
+  master_order_list: CUTS CLOTHING
+  mon_customer_ms: ''
+  aliases:
+  - CUTS CLOTHING
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: DAVID JONES(UNE PIECE)
+  status: review
+  packed_products: ''
+  shipped: DAVID JONES(UNE PIECE)
+  master_order_list: ''
+  mon_customer_ms: ''
+  aliases:
+  - DAVID JONES(UNE PIECE)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: DSSLR
+  status: review
+  packed_products: ''
+  shipped: ''
+  master_order_list: DSSLR
+  mon_customer_ms: ''
+  aliases:
+  - DSSLR
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: EDWONDER
+  status: review
+  packed_products: ''
+  shipped: EDWONDER
+  master_order_list: EDWONDER
+  mon_customer_ms: ''
+  aliases:
+  - EDWONDER
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: EQUINOX
+  status: review
+  packed_products: ''
+  shipped: EQUINOX
+  master_order_list: EQUINOX
+  mon_customer_ms: ''
+  aliases:
+  - EQUINOX
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: EXOTICA
+  status: review
+  packed_products: EXOTICA
+  shipped: EXOTICA
+  master_order_list: ''
+  mon_customer_ms: ''
+  aliases:
+  - EXOTICA
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: FARADAY LABS, INC (LAMBS)
+  status: review
+  packed_products: ''
+  shipped: ''
+  master_order_list: FARADAY LABS, INC (LAMBS)
+  mon_customer_ms: ''
+  aliases:
+  - FARADAY LABS, INC (LAMBS)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: FEETURES
+  status: approved
+  packed_products: ''
+  shipped: FEETURES
+  master_order_list: FEETURES
+  mon_customer_ms: ''
+  aliases:
+  - FEETURES
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: G FORE
+  status: review
+  packed_products: ''
+  shipped: G FORE
+  master_order_list: G FORE
+  mon_customer_ms: ''
+  aliases:
+  - G FORE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: GREYSON
+  status: approved
+  packed_products: GREYSON
+  shipped: GREYSON
+  master_order_list: GREYSON CLOTHIERS
+  mon_customer_ms: ''
+  aliases:
+  - GREYSON
+  - GREYSON CLOTHIERS
+  order_key_config:
+    unique_keys:
+      - AAG ORDER NUMBER
+      - PLANNED DELIVERY METHOD
+      - CUSTOMER STYLE
+    extra_checks:
+      - PO NUMBER
+      - CUSTOMER ALT PO
+      - ORDER TYPE
+      - ALIAS/RELATED ITEM
+      - ORIGINAL ALIAS/RELATED ITEM
+      - PATTERN ID
+  shipment_key_config:
+    unique_keys:
+      - Customer_PO
+      - Shipping_Method
+      - Style
+      - Color
+      - Size
+    extra_checks: 
+      - shippingCountry
+  map:
+    PO NUMBER: Customer_PO
+    PLANNED DELIVERY METHOD: Shipping_Method
+    CUSTOMER STYLE: Style
+    CUSTOMER COLOUR DESCRIPTION: Color
+    SIZE: Size  # if you want to match later
+  
+- canonical: JOHNNIE O
+  status: approved
+  packed_products: JOHNNIE O
+  shipped: JOHNNIE O
+  master_order_list: JOHNNIE O
+  mon_customer_ms: JOHNNIE O
+  aliases:
+  - JOHNNIE O
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - CUSTOMER ALT PO
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - ORIGINAL ALIAS/RELATED ITEM
+    - PATTERN ID
+  shipment_key_config:
+    unique_keys:
+      - Customer_PO
+      # - Shipping_Method
+      - Style
+      - Color
+      # - Size
+    extra_checks:
+      # - Qty
+  map:
+    PO NUMBER: Customer_PO
+    PLANNED DELIVERY METHOD: Shipping_Method
+    CUSTOMER STYLE: Style
+    COLOUR: Color
+    COLOR: Color  # For fallback, if needed
+    # SIZE: Size  # if you want to match later
+- canonical: JOHNNY WAS
+  status: approved
+  packed_products: ''
+  shipped: JOHNNY WAS
+  master_order_list: JOHNNY WAS
+  mon_customer_ms: ''
+  aliases:
+  - JOHNNY WAS
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: LAMBS
+  status: review
+  packed_products: LAMBS
+  shipped: LAMBS
+  master_order_list: ''
+  mon_customer_ms: ''
+  aliases:
+  - LAMBS
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: LORNA JANE
+  status: approved
+  packed_products: LORNA JANE
+  shipped: LORNA JANE
+  master_order_list:
+  - LORNA JANE
+  - LORNA JANE (AU)
+  - LORNA JANE (NZ)
+  mon_customer_ms: ''
+  aliases:
+  - LORNA JANE
+  - LORNA JANE (AU)
+  - LORNA JANE (NZ)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: MACK WELDON
+  status: review
+  packed_products: ''
+  shipped: MACK WELDON
+  master_order_list: MACK WELDON
+  mon_customer_ms: ''
+  aliases:
+  - MACK WELDON
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: PELOTON
+  status: approved
+  packed_products: PELOTON
+  shipped: PELOTON
+  master_order_list: Peloton Private Label
+  mon_customer_ms: ''
+  aliases:
+  - PELOTON
+  - Peloton Private Label
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: RARE
+  status: review
+  packed_products: ''
+  shipped: RARE
+  master_order_list: ''
+  mon_customer_ms: ''
+  aliases:
+  - RARE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: REC GEN
+  status: review
+  packed_products: ''
+  shipped: REC GEN
+  master_order_list: ''
+  mon_customer_ms: ''
+  aliases:
+  - REC GEN
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: RHONE
+  status: approved
+  packed_products: RHONE
+  shipped: RHONE
+  master_order_list: RHONE
+  mon_customer_ms: ''
+  aliases:
+  - RHONE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: RHYTHM
+  status: review
+  packed_products: RHYTHM
+  shipped: RHYTHM
+  master_order_list:
+  - RHYTHM
+  - RHYTHM (AU)
+  - RHYTHM (US)
+  mon_customer_ms: ''
+  aliases:
+  - RHYTHM
+  - RHYTHM (AU)
+  - RHYTHM (US)
+  matching_config:
+    style_match_strategy: alias_related_item
+    preferred_po_field: Customer_PO
+    style_field_override: ALIAS/RELATED ITEM
+    fuzzy_threshold: 85
+    size_aliases:
+      XS:
+      - EXTRA SMALL
+      - XSMALL
+      S:
+      - SMALL
+      - SM
+      M:
+      - MEDIUM
+      - MED
+      L:
+      - LARGE
+      - LRG
+      XL:
+      - EXTRA LARGE
+      - XLARGE
+      XXL:
+      - EXTRA EXTRA LARGE
+      - 2XL
+    exact_match_fields:
+    - Canonical_Customer
+    - Customer_PO
+    - ALIAS/RELATED ITEM
+    - Color
+    fuzzy_match_fields:
+    - ALIAS/RELATED ITEM
+    - Color
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: RYDERWEAR
+  status: review
+  packed_products: RYDERWEAR
+  shipped: RYDERWEAR
+  master_order_list: RYDERWEAR (AU)
+  mon_customer_ms: ''
+  aliases:
+  - RYDERWEAR
+  - RYDERWEAR (AU)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: SEISSENSE
+  status: approved
+  packed_products: SEISSENSE
+  shipped: SEISSENSE
+  master_order_list: SEISSENSE
+  mon_customer_ms: ''
+  aliases:
+  - SEISSENSE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: SOUL CYCLE
+  status: review
+  packed_products: ''
+  shipped: SOUL CYCLE
+  master_order_list: SOUL CYCLE
+  mon_customer_ms: ''
+  aliases:
+  - SOUL CYCLE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: SPIRITUAL GANGSTER
+  status: approved
+  packed_products: SPIRITUAL GANGSTER
+  shipped: SPIRITUAL GANGSTER
+  master_order_list: SPIRITUAL GANGSTER
+  mon_customer_ms: ''
+  aliases:
+  - SPIRITUAL GANGSTER
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: STARLIGHT
+  status: review
+  packed_products: ''
+  shipped: STARLIGHT
+  master_order_list: ''
+  mon_customer_ms: ''
+  aliases:
+  - STARLIGHT
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: STARLIGHT CHILDREN'S FOUNDATION (AU)
+  status: review
+  packed_products: ''
+  shipped: ''
+  master_order_list: STARLIGHT CHILDREN'S FOUNDATION (AU)
+  mon_customer_ms: ''
+  aliases:
+  - STARLIGHT CHILDREN'S FOUNDATION (AU)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: SUMMERSALT
+  status: review
+  packed_products: ''
+  shipped: SUMMERSALT
+  master_order_list: SUMMERSALT
+  mon_customer_ms: ''
+  aliases:
+  - SUMMERSALT
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: SUN DAY RED
+  status: approved
+  packed_products: SUN DAY RED
+  shipped: SUN DAY RED
+  master_order_list: SUN DAY RED
+  mon_customer_ms: ''
+  aliases:
+  - SUN DAY RED
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: TAYLOR MADE
+  status: review
+  packed_products: ''
+  shipped: TAYLOR MADE
+  master_order_list: TAYLOR MADE
+  mon_customer_ms: ''
+  aliases:
+  - TAYLOR MADE
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: TELFAR
+  status: review
+  packed_products: ''
+  shipped: TELFAR
+  master_order_list: TELFAR
+  mon_customer_ms: ''
+  aliases:
+  - TELFAR
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: TITLE NINE
+  status: approved
+  packed_products: TITLE NINE
+  shipped: TITLE NINE
+  master_order_list: TITLE 9
+  mon_customer_ms: ''
+  aliases:
+  - TITLE NINE
+  - TITLE 9
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: TRACK SMITH
+  status: approved
+  packed_products: TRACK SMITH
+  shipped: TRACK SMITH
+  master_order_list: TRACKSMITH
+  mon_customer_ms: ''
+  aliases:
+  - TRACK SMITH
+  - TRACKSMITH
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: UNE PIECE
+  status: approved
+  packed_products: UNE PIECE
+  shipped: UNE PIECE
+  master_order_list: UNE PIECE (AU)
+  mon_customer_ms: ''
+  aliases:
+  - UNE PIECE
+  - UNE PIECE (AU)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+- canonical: WHITE FOX
+  status: approved
+  packed_products: WHITE FOX
+  shipped: WHITE FOX
+  master_order_list: WHITE FOX (AU)
+  mon_customer_ms: ''
+  aliases:
+  - WHITE FOX
+  - WHITE FOX (AU)
+  order_key_config:
+    unique_keys:
+    - AAG ORDER NUMBER
+    - PLANNED DELIVERY METHOD
+    - CUSTOMER STYLE
+    extra_checks:
+    - PO NUMBER
+    - ORDER TYPE
+    - ALIAS/RELATED ITEM
+    - CUSTOMER ALT PO
+review_count: 36

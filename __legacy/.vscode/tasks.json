@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Greyson PO4755 Script",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"get_greyson_po4755_data.py"
+			],
+			"group": "test",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Enhanced Reconciliation Script",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"reconcile_orders_enhanced.py"
+			],
+			"group": "test",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Enhanced Script Helper",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"run_enhanced_script.py"
+			],
+			"group": "test",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Enhanced Reconciliation Script with Args",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"reconcile_orders_enhanced.py",
+				"--customer",
+				"GREYSON",
+				"--po",
+				"4755",
+				"--fuzzy-threshold",
+				"85"
+			],
+			"group": "test",
+			"problemMatcher": []
+		}
+	]
+}

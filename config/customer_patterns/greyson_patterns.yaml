@@ -1,0 +1,67 @@
+customer: GREYSON
+created: '2025-07-29T00:27:49.836708'
+learned_patterns:
+  mappings:
+  - from: '2'
+    to: Shipping14/input/requests/57399603
+  - from: s
+    field: ' name'
+  - to: s field
+  - from: S
+    field: '#66893   /input/requests/5739960'
+  - from: 'Sfetd field # field1/input#/input/requests/5739960'
+    field: :#6689960
+  - from: sfield##6689960
+    to: sfield#6689960
+  - from: ' field #6689960'
+    field: s6689960
+  - to: s6689960
+  - from: Sfetd field s6689960
+  - from: 'sfield#6689 #6689/input/requests/5739960'
+    to: sfield#6689960
+  fuzzy_thresholds: {}
+  shipping_aliases: []
+  notes: []
+  shipping_method_mappings:
+  - shipment_code: '12345'
+    canonical_name: Standard Shippment
+  - shipment_code: '78901'
+    canonical_name: Economy Shipment
+history:
+- date: '2025-07-29T00:27:49.836731'
+  analysis_summary:
+    customer: GREYSON
+    date_range: shipped 2025-07-03 to 2025-07-03
+    total_shipments: 20
+    exact_matches: 0
+    fuzzy_matches: 0
+    unmatched_shipments: 20
+    match_rate: 0.0
+    analysis_date: '2025-07-29T00:26:50.554774'
+  rules_added: 11
+  notes: LLM analysis update
+- date: '2025-07-29T00:35:38.410551'
+  analysis_summary:
+    customer: GREYSON
+    date_range: shipped 2025-07-03 to 2025-07-03
+    total_shipments: 20
+    exact_matches: 0
+    fuzzy_matches: 0
+    unmatched_shipments: 20
+    match_rate: 0.0
+    analysis_date: '2025-07-29T00:35:02.430178'
+  config_updates: 2
+  notes: LLM analysis update
+- date: '2025-07-29T00:37:45.209162'
+  analysis_summary:
+    customer: GREYSON
+    date_range: shipped 2025-07-03 to 2025-07-03
+    total_shipments: 20
+    exact_matches: 0
+    fuzzy_matches: 0
+    unmatched_shipments: 20
+    match_rate: 0.0
+    analysis_date: '2025-07-29T00:37:25.331024'
+  config_updates: 0
+  notes: LLM analysis update
+last_updated: '2025-07-29T00:37:45.209193'

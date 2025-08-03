@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Order-Shipment Value Mapping Configuration",
+  "description": "Comprehensive mapping rules for reconciling values between order systems (Excel) and shipment systems (FileMaker)",
+  
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-07-29",
+    "data_sources": {
+      "orders": "Excel files (business requirements)",
+      "shipments": "FileMaker shipping system (fulfillment records)"
+    }
+  },
+
+  "global_mappings": {
+    "PLANNED_DELIVERY_METHOD": {
+      "description": "Mapping between order delivery methods and shipment delivery methods",
+      "mappings": [
+        {
+          "order_value": "FAST BOAT",
+          "shipment_values": ["SEA-FB", "FB", "FAST_BOAT"],
+          "confidence": 0.95,
+          "rationale": "FAST BOAT in orders corresponds to SEA-FB (Sea-Fast Boat) in shipments",
+          "bidirectional": true,
+          "fuzzy_match": false
+        },
+        {
+          "order_value": "AIR",
+          "shipment_values": ["AIR", "AIR_FREIGHT", "AIRFREIGHT"],
+          "confidence": 0.98,
+          "rationale": "Direct air shipping method mapping",
+          "bidirectional": true,
+          "fuzzy_match": true
+        },
+        {
+          "order_value": "SEA",
+          "shipment_values": ["SEA", "OCEAN", "SEA_FREIGHT"],
+          "confidence": 0.95,
+          "rationale": "Sea freight shipping method variations",
+          "bidirectional": true,
+          "fuzzy_match": true
+        },
+        {
+          "order_value": "AIR/SEA SPLIT",
+          "shipment_values": ["AIR_SEA_SPLIT", "MIXED", "SPLIT_SHIPMENT"],
+          "confidence": 0.90,
+          "rationale": "Mixed delivery methods for split shipments",
+          "bidirectional": true,
+          "fuzzy_match": true
+        }
+      ]
+    },
+
+    "CUSTOMER_STYLE": {
+      "description": "Mapping between order style codes and shipment style codes",
+      "mappings": [
+        {
+          "order_value": "MFA24K80",
+          "shipment_values": ["MFA24K80"],
+          "confidence": 1.0,
+          "rationale": "Exact style code match",
+          "bidirectional": true,
+          "fuzzy_match": false
+        }
+      ],
+      "fuzzy_rules": {
+        "enabled": true,
+        "threshold": 0.85,
+        "rules": [
+          {
+            "pattern": "case_insensitive",
+            "confidence": 0.95,
+            "rationale": "Style codes may have case variations between systems"
+          },
+          {
+            "pattern": "remove_spaces_dashes",
+            "confidence": 0.90,
+            "rationale": "Style codes may have formatting differences (spaces, dashes)"
+          }
+        ]
+      }
+    },
+
+    "CUSTOMER_COLOUR_DESCRIPTION": {
+      "description": "Mapping between order color descriptions and shipment color descriptions",
+      "mappings": [
+        {
+          "order_value": "417 - MALTESE BLUE",
+          "shipment_values": ["417 - MALTESE BLUE", "MALTESE BLUE", "417-MALTESE BLUE"],
+          "confidence": 0.95,
+          "rationale": "Color code 417 corresponds to MALTESE BLUE with format variations",
+          "bidirectional": true,
+          "fuzzy_match": true
+        },
+        {
+          "order_value": "591 - VINTAGE INDIGO",
+          "shipment_values": ["591 - VINTAGE INDIGO", "VINTAGE INDIGO", "591-VINTAGE INDIGO"],
+          "confidence": 0.95,
+          "rationale": "Color code 591 corresponds to VINTAGE INDIGO with format variations",
+          "bidirectional": true,
+          "fuzzy_match": true
+        }
+      ],
+      "fuzzy_rules": {
+        "enabled": true,
+        "threshold": 0.80,
+        "rules": [
+          {
+            "pattern": "extract_color_name",
+            "confidence": 0.85,
+            "rationale": "Extract color name from code-color format (e.g., '417 - MALTESE BLUE' -> 'MALTESE BLUE')"
+          },
+          {
+            "pattern": "normalize_punctuation",
+            "confidence": 0.90,
+            "rationale": "Handle variations in separators (-, _, space)"
+          }
+        ]
+      }
+    },
+
+    "PO_NUMBER": {
+      "description": "Mapping between order PO numbers and shipment PO numbers",
+      "mappings": [],
+      "fuzzy_rules": {
+        "enabled": true,
+        "threshold": 0.95,
+        "rules": [
+          {
+            "pattern": "remove_leading_zeros",
+            "confidence": 0.98,
+            "rationale": "PO numbers may have leading zero differences between systems"
+          },
+          {
+            "pattern": "case_insensitive",
+            "confidence": 0.99,
+            "rationale": "PO numbers should be case insensitive"
+          }
+        ]
+      }
+    }
+  },
+
+  "customer_specific_mappings": {
+    "GREYSON": {
+      "PLANNED_DELIVERY_METHOD": {
+        "mappings": [
+          {
+            "order_value": "FAST BOAT",
+            "shipment_values": ["SEA-FB"],
+            "confidence": 0.98,
+            "rationale": "GREYSON specific: FAST BOAT orders ship as SEA-FB",
+            "bidirectional": true,
+            "fuzzy_match": false
+          }
+        ]
+      }
+    }
+  },
+
+  "llm_integration": {
+    "prompt_template": "Analyze the following unmatched records and suggest new mappings using this JSON structure",
+    "confidence_thresholds": {
+      "high": 0.90,
+      "medium": 0.70,
+      "low": 0.50
+    },
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "suggested_mappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "column": {"type": "string"},
+              "order_value": {"type": "string"},
+              "shipment_value": {"type": "string"},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "rationale": {"type": "string"},
+              "pattern_type": {"enum": ["exact", "fuzzy", "format_variation", "business_rule"]}
+            },
+            "required": ["column", "order_value", "shipment_value", "confidence", "rationale"]
+          }
+        }
+      }
+    }
+  }
+}

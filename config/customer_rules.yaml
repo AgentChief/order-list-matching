@@ -1,0 +1,6 @@
+defaults:
+  exclude_sizes: ["SMS"]
+  fuzzy_threshold: 0.90
+
+GREYSON:
+  fuzzy_threshold: 0.85

@@ -1,0 +1,10 @@
+pandas>=2.2
+pyodbc>=5.1
+sqlalchemy>=2.0
+ruamel.yaml>=0.18
+rapidfuzz>=3.6
+tqdm>=4.66
+requests>=2.32
+python-dotenv>=1.0
+recordlinkage>=0.15
+streamlit>=1.22

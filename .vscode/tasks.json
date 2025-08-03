@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Enhanced DB Matcher - GREYSON PO4755",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "enhanced_db_matcher.py",
+                "--customer",
+                "GREYSON",
+                "--po",
+                "4755"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}
