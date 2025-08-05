@@ -1,0 +1,7 @@
+test_name,passed,message,details,timestamp
+Database Schema,False,Database connection or schema test failed,No module named 'yaml',2025-08-05 18:31:32.315267
+Enhanced Matching Engine,False,Engine import or basic functionality failed,No module named 'pyodbc',2025-08-05 18:31:32.320786
+Movement Table Operations,False,Movement table operations failed,No module named 'yaml',2025-08-05 18:31:32.321282
+Unified Streamlit Interface,False,Interface import or basic functionality failed,No module named 'streamlit',2025-08-05 18:31:32.328570
+Integration Workflow,False,Integration workflow test failed,No module named 'yaml',2025-08-05 18:31:32.329107
+Performance Expectations,False,Performance testing failed,No module named 'yaml',2025-08-05 18:31:32.329424
