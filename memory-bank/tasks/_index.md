@@ -1,26 +1,27 @@
 # Tasks Index - Consolidated Master List
 
 ## Critical Priority - IMMEDIATE ACTION REQUIRED
-- [TASK001] Implement Materialized Summary Tables - CRITICAL 🔥 Fix "god query" performance bottleneck
-- [TASK002] UI Consistency Standardization - HIGH 🎯 Resolve ✅/❌ vs ✓/✗ formatting inconsistencies
+- [TASK015] Documentation Foundation Cleanup - CRITICAL � Establish proper docs structure and naming standards (BLOCKING TASK014 & TASK013)
+- [TASK014] Database Folder Consolidation - CRITICAL 🚨 Clean up duplicate database/ and db/ folders (BLOCKING TASK013)
+- [TASK013] Consolidated Movement Table Implementation - HIGH 🚀 Event-driven unified reporting table (BLOCKED by TASK014 & TASK015)
+
+## Completed - High Impact
+- [TASK001] Implement Materialized Summary Tables - COMPLETED ✅ Fixed "god query" performance bottleneck (20-50x improvement)
 
 ## In Progress
-- [TASK003] System Performance and Architecture Optimization - Root folder cleanup COMPLETED, performance work pending
+- [TASK002] UI Consistency & Standardization - Streamlit integration and cache validation
 
-## Pending - High Priority (Phase 2)
-- [TASK004] Drill-Down Investigation Capabilities - Enable users to investigate root causes of issues
-- [TASK005] HITL Workflow Integration - Complete human-in-the-loop manual review process
-- [TASK006] Action-Oriented Issue Resolution - Contextual action buttons and guided workflows
-
-## Pending - Medium Priority (Phase 3)  
-- [TASK007] Performance Monitoring Dashboard - System health metrics and alerting
-- [TASK008] Advanced Matching Capabilities - Enhanced fuzzy matching and ML confidence
-- [TASK009] Reporting & Business Intelligence - Executive dashboards and trend analysis
-
-## Pending - Low Priority (Phase 4)
-- [TASK010] Stored Procedure Architecture Migration - Move business logic to database
-- [TASK011] Real-Time Processing Capabilities - Event-driven matching pipeline
-- [TASK012] Machine Learning Integration - ML-enhanced pattern recognition
+## Pending
+- [TASK003] System Performance Optimization - Ongoing monitoring and improvements
+- [TASK004] Drill-Down Investigation - Enhanced analysis capabilities
+- [TASK005] HITL Workflow Integration - Human-in-the-loop workflow improvements
+- [TASK006] Action-Oriented Resolution - Streamlined issue resolution workflows
+- [TASK007] Performance Monitoring Dashboard - Real-time system health monitoring
+- [TASK008] Advanced Matching Capabilities - ML and advanced algorithms integration
+- [TASK009] Reporting & Business Intelligence - Enhanced reporting features
+- [TASK010] Stored Procedure Architecture Migration - Migrate logic to stored procedures
+- [TASK011] Real-Time Processing Capabilities - Near real-time processing implementation
+- [TASK012] Machine Learning Integration - ML for predictive matching and anomaly detection
 
 ## Completed Legacy Tasks
 - [LEGACY-01] Fix Core Matching System - Fixed basic exact matching (COMPLETED July 2025)
@@ -35,21 +36,29 @@
 
 ## Implementation Phases
 
-### 🔥 Phase 1: Critical Performance & Infrastructure (Week 1-2)
-**TASK001, TASK002, TASK003** - Fix foundation issues blocking production
+### � Phase 0: Foundation Cleanup (Week 1)
+**TASK015, TASK014** - Critical foundation issues blocking all strategic work
 
-### 🎯 Phase 2: Workflow Completion (Week 3-4)  
-**TASK004, TASK005, TASK006** - Complete user journeys and workflows
+### 🚀 Phase 1: Strategic Implementation (Week 2-3)  
+**TASK013, TASK002** - Movement table and UI consistency for production readiness
 
-### 🔧 Phase 3: Advanced Features & Monitoring (Week 5-6)
+### 🎯 Phase 2: Workflow Completion (Week 4-5)  
+**TASK003, TASK004, TASK005, TASK006** - Complete user journeys and workflows
+
+### 🔧 Phase 3: Advanced Features & Monitoring (Week 6-7)
 **TASK007, TASK008, TASK009** - Production excellence and monitoring
 
-### 📈 Phase 4: Scale & Future Features (Week 7-8+)
+### 📈 Phase 4: Scale & Future Features (Week 8+)
 **TASK010, TASK011, TASK012** - Enterprise architecture and ML enhancement
 
 ---
 
-## Current Focus: **TASK001 & TASK002**
-These are CRITICAL PATH items blocking system scalability and production readiness.
+## Current Focus: **TASK015 → TASK014 → TASK013**
+**CRITICAL PATH**: Documentation foundation → Database consolidation → Movement table implementation
 
-**Next Action:** Begin TASK001 implementation - the performance bottleneck is the #1 blocker.
+**Next Action:** Execute TASK015 documentation cleanup to establish proper foundation for all subsequent work.
+
+**BLOCKING CHAIN**: 
+- TASK015 blocks TASK014 (need clean docs structure for database consolidation)
+- TASK014 blocks TASK013 (need single database folder for movement table)
+- TASK013 unlocks strategic BI capabilities

@@ -60,6 +60,80 @@ flowchart TD
     NO --> Results
 ```
 
+## Database & Schema Organization
+
+### Database Folder Structure (`db/`)
+```
+db/                           # Primary database assets
+├── ddl/                      # Data Definition Language (CREATE statements)
+│   ├── data_model/           # Business tables (post-reconciliation)
+│   │   ├── fact_order_list.sql
+│   │   ├── fact_orders_shipped.sql
+│   │   └── stored_procedures/
+│   └── reconciliation/       # Reconciliation process tables
+│       ├── reconciliation_result.sql
+│       ├── match_attribute_score.sql
+│       └── hitl_queue.sql
+├── models/                   # dbt-style SQL models (NEW ARCHITECTURE)
+│   ├── staging/              # Raw data + minimal transformations
+│   │   ├── stg_order_list.sql
+│   │   └── stg_fm_orders_shipped.sql
+│   ├── intermediate/         # Business logic transformations
+│   │   ├── int_orders_extended.sql
+│   │   └── int_shipments_extended.sql
+│   └── marts/                # Business-facing presentation layer
+│       └── reconciliation/
+│           ├── mart_fact_order_list.sql
+│           ├── mart_fact_orders_shipped.sql
+│           └── mart_reconciliation_summary.sql
+├── migrations/               # Database migration scripts (timestamped)
+│   ├── 01_create_stg_fm_orders_shipped_table.sql
+│   ├── 05_create_reconciliation_tables.sql
+│   └── 20230925_120000_dbt_structure_migration.sql
+├── procedures/               # Stored procedures
+│   ├── sp_refresh_shipment_summary_cache.sql
+│   └── sync_fm_orders_to_fact.sql
+├── schema/                   # Current schema definitions
+│   ├── shipment_summary_cache.sql
+│   └── config_schema.sql
+├── scripts/                  # Utility scripts
+├── tests/                    # Database tests
+├── docs/                     # Database-specific documentation
+├── examples/                 # Usage examples
+└── queries/                  # Ad-hoc queries (currently empty)
+    ├── data_model/           # (empty - reserved for ad-hoc queries)
+    └── reconciliation/       # (empty - reserved for ad-hoc queries)
+```
+
+### Legacy Issues to Resolve
+- **`sql/` root folder**: Contains `hitl_tables.sql` → **MOVE to `db/ddl/reconciliation/`**
+- **`database/` folder**: 34 duplicate files → **CONSOLIDATE into `db/` (TASK014)**
+- **Empty `queries/` subfolders**: Document purpose or remove
+
+### dbt-Style Architecture Evolution
+**CURRENT STATE**: Transitioning from legacy DDL to dbt-style layered models
+**TARGET STATE**: Full dbt-style with staging → intermediate → marts flow
+
+**Data Flow**: `SOURCE TABLES → STAGING → INTERMEDIATE → MARTS → MOVEMENT TABLE`
+1. ✅ **Source**: FACT_ORDER_LIST, FM_orders_shipped
+2. ✅ **Staging**: stg_order_list, stg_fm_orders_shipped  
+3. ✅ **Intermediate**: int_orders_extended, int_shipments_extended
+4. ✅ **Marts**: mart_fact_order_list, mart_fact_orders_shipped
+5. ✅ **Performance Layer**: shipment_summary_cache (TASK001)
+6. 🆕 **Future**: fact_order_movements (TASK013)
+
+## Order of Operations
+SOURCE TABLES → STAGING → INTERMEDIATE → MARTS → MOVEMENT TABLE
+     ✅              ✅            ✅         ✅         🔶 READY
+
+1. ✅ FACT_ORDER_LIST (orders source)
+2. ✅ FM_orders_shipped (shipments source)  
+3. ✅ stg_order_list → int_orders_extended → mart_fact_order_list
+4. ✅ stg_fm_orders_shipped → int_shipments_extended → mart_fact_orders_shipped
+5. ✅ reconciliation_result (match metadata)
+6. ✅ shipment_summary_cache (TASK001 performance layer)
+7. 🆕 fact_order_movements (needs creation - TASK013)
+
 ## Key Technical Decisions
 
 1. **Database-Driven Approach**: Moving from YAML to database for configuration and mappings to enable:
